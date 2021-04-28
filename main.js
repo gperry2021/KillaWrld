@@ -2,7 +2,7 @@ const Discord = require('discord.js');
 
 const client = new Discord.Client();
 
-const prefix = '+';
+const prefix = process.env.PREFIX;
 
 const fs = require('fs');
 
@@ -20,6 +20,7 @@ client.once('ready', () => {
     console.log('!KillaWrld is online!');
 });
 
+require('dotenv').congfig();
 
 client.on('message', message =>{
     if(!message.content.startsWith(prefix) || message.author.bot) return;
@@ -98,4 +99,4 @@ else if(word.startsWith('😭')){
 
 
 });
-client.login('NzUzMzc0MTYwNTc0NzQyNTQ5.X1lQXA.CIwmZ74hljBhykT0RQ4AWxFmvFE');
+client.login(process.env.DISCORD_TOKEN);
