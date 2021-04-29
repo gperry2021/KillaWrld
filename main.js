@@ -2,7 +2,9 @@ const Discord = require('discord.js');
 
 const client = new Discord.Client();
 
-const prefix = '+';
+require('dotenv').config();
+
+const prefix = process.env.PREFIX;
 
 const fs = require('fs');
 
@@ -98,4 +100,4 @@ else if(word.startsWith('😭')){
 
 
 });
-client.login('NzUzMzc0MTYwNTc0NzQyNTQ5.X1lQXA.CIwmZ74hljBhykT0RQ4AWxFmvFE');
+client.login(process.env.DISCORD_TOKEN);
